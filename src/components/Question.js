@@ -1,7 +1,63 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
+import styled from "styled-components";
 
 import Error from "./Error";
 
+const QuestionStyled = styled.aside`
+  background-color: #f1f7fc;
+  padding: 35px 40px;
+  border-radius: 30px;
+  box-shadow: 0 25px 50px rgba(132, 132, 132, 0.2);
+`;
+
+const QuestionHeader = styled.h3`
+  font-size: 24px;
+  line-height: 24px;
+  margin-bottom: 30px;
+  color: var(--black);
+  font-family: "PT Sans", sans-serif;
+`;
+const Form = styled.form``;
+const FormControl = styled.div`
+  margin-bottom: 25px;
+`
+const Input = styled.input`
+  height: 60px;
+  width: 100%;
+  outline: none;
+  padding: 0 20px;
+  background-color: var(--inputsBack);
+  border: 2px solid var(--inputsBorder);
+  border-radius: 5px;
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+  ::placeholder {
+    color: var(--grey);
+    font-family: "Roboto", sans-serif;
+  }
+  :focus::placeholder {
+    color: var(--orange);
+    font-weight: bold;
+  }
+  :focus {
+    border: 2px solid var(--orange);
+  }
+`;
+const Button = styled.button`
+  width: 100%;
+  height: 60px;
+  background-color: var(--orange);
+  color: var(--white);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  :hover {
+    opacity: 0.75;
+  }
+`;
 const Question = ({ setBudget, setRemaining }) => {
   //Definir el state
   const [quality, setQuality] = useState(0);
@@ -30,25 +86,23 @@ const Question = ({ setBudget, setRemaining }) => {
   };
 
   return (
-    <Fragment>
-      <h2>Coloca tu presupuesto</h2>
+    <QuestionStyled>
+      <QuestionHeader>Coloca tu presupuesto</QuestionHeader>
 
-      {error ? <Error message="El presupuesto es incorreto"  /> : null}
+      <Form onSubmit={addBunget}>
+        <FormControl>
+          <Input
+            onChange={defineBudget}
+            type="number"
+            className="u-full-width"
+            placeholder="Monto de presupuesto"
+          />
+          {error ? <Error message="El presupuesto es incorreto" /> : null}
+        </FormControl>
 
-      <form onSubmit={addBunget}>
-        <input
-          onChange={defineBudget}
-          type="number"
-          className="u-full-width"
-          placeholder="Coloca tu presupuesto"
-        />
-        <input
-          type="submit"
-          className="button-primary u-full-width"
-          value="Definir Presupuesto"
-        />
-      </form>
-    </Fragment>
+        <Button type="submit">Definir Presupuesto</Button>
+      </Form>
+    </QuestionStyled>
   );
 };
 
