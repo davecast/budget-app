@@ -21,6 +21,7 @@ const Grid = styled.div`
 `;
 const GridLeft = styled.div`
   grid-area: left;
+  align-self: center;
 `;
 const GridRight = styled.div`
   grid-area: right;

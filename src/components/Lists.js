@@ -7,9 +7,12 @@ import Expense from "./Expense";
 const ListContainer = styled.ul`
   min-height: 250px;
   padding: 25px;
-  max-height: 350px;
+  max-height: 300px;
   border-bottom: 1px solid var(--inputsBorder);
-  margin-bottom: 25px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px;
+  overflow-y: auto;
 `;
 
 const Lists = ({ expenses }) => {
