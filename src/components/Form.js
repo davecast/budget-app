@@ -2,19 +2,15 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import shortid from "shortid";
 
+/*LAYOUTS*/
+import Title from "../layouts/Title";
+
 /*COMPONENTS*/
 import Error from "./Error";
 
 const FormStyled = styled.section``;
 const FormContent = styled.form``;
 
-const FormHeader = styled.h3`
-  font-size: 24px;
-  line-height: 24px;
-  margin-bottom: 30px;
-  color: var(--black);
-  font-family: "PT Sans", sans-serif;
-`;
 const FormControl = styled.div`
   margin-bottom: 25px;
 `;
@@ -102,7 +98,7 @@ const Form = ({ setExpense, setFlagExpense }) => {
 
   return (
     <FormStyled onSubmit={addExpenses}>
-      <FormHeader>Agrega tus gastos</FormHeader>
+      <Title>Agrega tus gastos</Title>
       <FormContent>
         <FormControl>
           <Input

@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+/*LAYOUTS*/
+import Title from "../layouts/Title";
+
+/*COMPONENTS*/
 import Error from "./Error";
 
 const QuestionStyled = styled.aside`
@@ -10,13 +14,6 @@ const QuestionStyled = styled.aside`
   box-shadow: 0 25px 50px rgba(132, 132, 132, 0.2);
 `;
 
-const QuestionHeader = styled.h3`
-  font-size: 24px;
-  line-height: 24px;
-  margin-bottom: 30px;
-  color: var(--black);
-  font-family: "PT Sans", sans-serif;
-`;
 const Form = styled.form``;
 const FormControl = styled.div`
   margin-bottom: 25px;
@@ -88,7 +85,7 @@ const Question = ({ setBudget, setRemaining, setHero }) => {
 
   return (
     <QuestionStyled>
-      <QuestionHeader>Coloca tu presupuesto</QuestionHeader>
+      <Title>Coloca tu presupuesto</Title>
 
       <Form onSubmit={addBunget}>
         <FormControl>

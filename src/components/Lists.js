@@ -4,23 +4,22 @@ import styled from "styled-components";
 /*COMPONENTS*/
 import Expense from "./Expense";
 
-const ListsHeader = styled.h3`
-  font-size: 24px;
-  line-height: 24px;
-  margin-bottom: 30px;
-  color: var(--black);
-  font-family: "PT Sans", sans-serif;
+const ListContainer = styled.ul`
+  min-height: 250px;
+  padding: 25px;
+  max-height: 350px;
+  border-bottom: 1px solid var(--inputsBorder);
+  margin-bottom: 25px;
 `;
-
-
 
 const Lists = ({ expenses }) => {
   return (
     <Fragment>
-      <ListsHeader>Listado</ListsHeader>
-      {expenses.map((expense) => (
-        <Expense key={expense.id} expense={expense} />
-      ))}
+      <ListContainer>
+        {expenses.map((expense) => (
+          <Expense key={expense.id} expense={expense} />
+        ))}
+      </ListContainer>
     </Fragment>
   );
 };

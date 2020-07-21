@@ -34,11 +34,11 @@ p {
 }
 
 .alert--danger {
-  background-color: var(--error); 
+  color: var(--error); 
 }
 .alert--warning {
-  background-color: var(--warning); 
+  color: var(--warning); 
 }
 .alert--success {
-  background-color: var(--success); 
+  color: var(--success); 
 }
