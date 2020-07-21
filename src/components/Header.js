@@ -44,7 +44,7 @@ const Header = () => {
           <Nav>
             <Menu>
               <li>
-                Power by <a href="https://davecastworks.com" target="_blank">Davecast</a>
+                Power by <a href="https://davecastworks.com" target="_blank" rel="noopener noreferrer">Davecast</a>
               </li>
             </Menu>
           </Nav>

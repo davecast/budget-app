@@ -5,14 +5,14 @@
   --orange: #f99746;
   --inputsBack: #fefefe;
   --inputsBorder: #e2e2e2;
-  --error: rgb(236, 53, 53);
-  --warning: rgb(236, 53, 53);
-  --success: rgb(236, 53, 53);
+  --error: rgb(243, 117, 117);
+  --warning: rgb(253, 225, 132);
+  --success: rgb(53, 236, 181);
 }
 
 body {
   font-family: "Roboto", sans-serif;
-  background-image: url(/static/media/back.fe0e5cc7.jpg);
+  background-image: url("./assets/img/back.jpg");
   min-height: 100vh;
   background-size: cover;
   background-position: center;
@@ -31,4 +31,14 @@ h5,
 h6,
 p {
   margin: 0;
+}
+
+.alert--danger {
+  background-color: var(--error); 
+}
+.alert--warning {
+  background-color: var(--warning); 
+}
+.alert--success {
+  background-color: var(--success); 
 }

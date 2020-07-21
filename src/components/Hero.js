@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import HeroImage from "../assets/img/home.png";
@@ -41,10 +41,9 @@ const GridRight = styled.div`
   align-self: center;
 `;
 
-const Hero = () => {
+const Hero = ({setHero, setBudget, setRemaining}) => {
   //Definir el state
-  const [budget, setBudget] = useState(0);
-  const [remaining, setRemaining] = useState(0);
+  
 
   return (
     <HeroStyled>
@@ -58,7 +57,7 @@ const Hero = () => {
             <HeroImg src={HeroImage} alt="Budget explain image" />
           </GridLeft>
           <GridRight>
-            <Question setBudget={setBudget} setRemaining={setRemaining} />
+            <Question setBudget={setBudget} setRemaining={setRemaining} setHero={setHero} />
           </GridRight>
         </Grid>
       </Wrapper>

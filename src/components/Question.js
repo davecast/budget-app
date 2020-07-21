@@ -58,7 +58,7 @@ const Button = styled.button`
     opacity: 0.75;
   }
 `;
-const Question = ({ setBudget, setRemaining }) => {
+const Question = ({ setBudget, setRemaining, setHero }) => {
   //Definir el state
   const [quality, setQuality] = useState(0);
   const [error, setError] = useState(false);
@@ -83,6 +83,7 @@ const Question = ({ setBudget, setRemaining }) => {
     setError(false);
     setBudget(quality);
     setRemaining(quality);
+    setHero(false);
   };
 
   return (
@@ -94,7 +95,6 @@ const Question = ({ setBudget, setRemaining }) => {
           <Input
             onChange={defineBudget}
             type="number"
-            className="u-full-width"
             placeholder="Monto de presupuesto"
           />
           {error ? <Error message="El presupuesto es incorreto" /> : null}
